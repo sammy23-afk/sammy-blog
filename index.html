@@ -21,7 +21,7 @@ fontSelect.addEventListener("change", () => {
   <header>
     <nav class="navbar" aria-label="Main Navigation">
       <div class="logo-wrap">
-        <a href="index.html" class="logo"> 𝑺𝒂𝒎𝒎𝒚𝑾𝒓𝒊𝒕𝒆𝒔 </a>
+        <a href="index.html" class="logo"> SammyWrites </a>
         <p class="tagline">A blog full of little digital footprints.</p>
       </div>
 
@@ -35,27 +35,24 @@ fontSelect.addEventListener("change", () => {
 
 
             <!-- Search bar with live suggestions -->
-        <nav>
+      <nav>
         <form class="search-bar" role="search" onsubmit="return false;">
-          <input type="text" id="searchInput" placeholder="Search blogs..." aria-label="Search">
-          <button type="button" id="searchBtn">🔍</button>
+        <input type="text" id="searchInput" placeholder="Search blogs..." aria-label="Search">
+        <button type="button" id="searchBtn">🔍</button>
         </form>
         <ul id="suggestions"></ul>
-        </nav>
+      </nav>
+        <div class="font-picker">
+    <label for="fontSelect">Choose font:</label>
+    <select id="fontSelect">
+      <option value="'Poppins', sans-serif" selected>Poppins</option>
+      <option value="'Playfair Display', serif">Playfair Display</option>
+      <option value="'Quicksand', sans-serif">Quicksand</option>
+      <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
+      <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
+    </select>
+  </div>
 
-
-      <!-- Theme toggle -->
-      <button id="themeToggle" aria-label="Toggle theme">🌗</button>
-      <label for="fontSelect">Choose font:</label>
-  <select id="fontSelect">
-  <option value="'Playfair Display', serif">Playfair Display</option>
-  <option value="'Poppins', sans-serif" selected>Poppins</option>
-  <option value="'Quicksand', sans-serif">Quicksand</option>
-  <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
-  <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
-</select>
-
-    </nav>
   </header>
 
   <!-- Hero Section -->

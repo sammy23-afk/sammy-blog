@@ -449,3 +449,19 @@ body.books-page .page-content {
   margin-left: 10px;
   font-size: 0.9rem;
 }
+#fontSelect {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ff5ca2;
+  background: #fff0f6;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+
+#fontSelect:hover {
+  background: #ffe6f0;
+  border-color: #ff3385;
+}
