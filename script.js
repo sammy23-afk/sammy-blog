@@ -73,3 +73,38 @@ circles.forEach(circle => {
     circle.style.transform = 'scale(1)';
   });
 });
+
+const posts = [
+    { title: "Why Frozen Yoghurt Beats Ice Cream", url: "blog1.html" },
+    { title: "SammyWrites First Blog", url: "blog2.html" },
+    { title: "Featured Article", url: "featured.html" }
+];
+
+const input = document.getElementById("searchInput");
+const suggestions = document.getElementById("suggestions");
+
+input.addEventListener("input", () => {
+    const query = input.value.toLowerCase();
+    suggestions.innerHTML = "";
+
+    if (query.length > 0) {
+        const matches = posts.filter(post => post.title.toLowerCase().includes(query));
+
+        if (matches.length > 0) {
+            matches.forEach(match => {
+                const li = document.createElement("li");
+                li.textContent = match.title;
+                li.onclick = () => {
+                    window.location.href = match.url;
+                };
+                suggestions.appendChild(li);
+            });
+        } else {
+            const li = document.createElement("li");
+            li.textContent = "Sorry, search not found ❌";
+            li.style.color = "red";
+            suggestions.appendChild(li);
+        }
+    }
+});
+
