@@ -13,7 +13,7 @@
   <header>
     <nav class="navbar" aria-label="Main Navigation">
       <div class="logo-wrap">
-        <a href="index.html" class="logo">SammyWrites</a>
+        <a href="index.html" class="logo"> SammyWrites </a>
         <p class="tagline">A blog full of little digital footprints.</p>
       </div>
 
@@ -25,18 +25,18 @@
         <li><a href="tel:+61481893582">Connect</a></li>
       </ul>
 
-      <!-- Settings Button -->
+      <!-- ✅ Settings Button -->
       <button id="settingsBtn" class="settings-btn">⚙️</button>
     </nav>
 
-    <!-- Search bar with live suggestions -->
-    <div class="search-bar-wrap">
+    <!-- ✅ Search bar (unchanged) -->
+    <nav>
       <form class="search-bar" role="search" onsubmit="return false;">
         <input type="text" id="searchInput" placeholder="Search blogs..." aria-label="Search">
         <button type="button" id="searchBtn">🔍</button>
       </form>
       <ul id="suggestions"></ul>
-    </div>
+    </nav>
   </header>
 
   <!-- Hero Section -->
@@ -64,7 +64,7 @@
     </div>
   </section>
 
-  <!-- Settings Panel -->
+  <!-- ✅ Settings Panel -->
   <div id="settingsPanel" class="settings-panel">
     <h3>⚙️ Settings</h3>
 
@@ -101,7 +101,7 @@
     const settingsPanel = document.getElementById("settingsPanel");
     const closeSettings = document.getElementById("closeSettings");
 
-    // Open/close settings panel
+    // Open/close
     settingsBtn.addEventListener("click", () => {
       settingsPanel.style.display = "block";
     });
@@ -115,9 +115,8 @@
     });
 
     // Font select
-    const fontSelect = document.getElementById("fontSelect");
-    fontSelect.addEventListener("change", () => {
-      document.body.style.fontFamily = fontSelect.value;
+    document.getElementById("fontSelect").addEventListener("change", (e) => {
+      document.body.style.fontFamily = e.target.value;
     });
 
     // Show/hide tagline
