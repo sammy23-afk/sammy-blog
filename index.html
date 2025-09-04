@@ -24,17 +24,15 @@
         </ul>
 
 
-      <!-- Search bar -->
-      <form class="search-bar" role="search">
-        <input type="text" placeholder="Search blogs..." aria-label="Search">
-        <button type="submit">🔍</button>
-      </form>
-
-      <nav>
-        <!-- your other nav links -->
-        <input type="text" id="searchInput" placeholder="Search my blog...">
+            <!-- Search bar with live suggestions -->
+        <nav>
+        <form class="search-bar" role="search" onsubmit="return false;">
+          <input type="text" id="searchInput" placeholder="Search blogs..." aria-label="Search">
+          <button type="button" id="searchBtn">🔍</button>
+        </form>
         <ul id="suggestions"></ul>
-      </nav>
+        </nav>
+
 
       <!-- Theme toggle -->
       <button id="themeToggle" aria-label="Toggle theme">🌗</button>
