@@ -26,17 +26,17 @@
       </ul>
 
       <!-- ✅ Settings Button -->
-      <button id="settingsBtn" class="settings-btn">⚙️</button>
+      <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
     </nav>
 
-    <!-- ✅ Search bar (unchanged) -->
-    <nav>
+    <!-- ✅ Search bar centered -->
+    <div class="search-bar-container">
       <form class="search-bar" role="search" onsubmit="return false;">
         <input type="text" id="searchInput" placeholder="Search blogs..." aria-label="Search">
         <button type="button" id="searchBtn">🔍</button>
       </form>
       <ul id="suggestions"></ul>
-    </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -101,7 +101,7 @@
     const settingsPanel = document.getElementById("settingsPanel");
     const closeSettings = document.getElementById("closeSettings");
 
-    // Open/close
+    // Open/close panel
     settingsBtn.addEventListener("click", () => {
       settingsPanel.style.display = "block";
     });

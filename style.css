@@ -546,3 +546,38 @@ body.books-page .page-content {
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+/* Center search bar below navbar */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+/* Ensure search bar has a nice width */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #ffe6f3;
+  border-radius: 20px;
+  border: 2px solid var(--accent);
+  padding: 0 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Settings button inside nav */
+.settings-btn {
+  margin-left: 1rem;
+  background: var(--accent);
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.2s, background 0.3s;
+}
+.settings-btn:hover {
+  transform: scale(1.05);
+  background: var(--secondary);
+}
