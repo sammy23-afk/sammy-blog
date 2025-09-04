@@ -3,56 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sammy's</title>
+  <title>SammyWrites</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;700&family=Quicksand:wght@400;600&family=Bebas+Neue&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-
 </head>
-<script>
-const fontSelect = document.getElementById("fontSelect");
-
-fontSelect.addEventListener("change", () => {
-  document.body.style.fontFamily = fontSelect.value;
-});
-</script>
 
 <body>
   <!-- Header -->
   <header>
     <nav class="navbar" aria-label="Main Navigation">
       <div class="logo-wrap">
-        <a href="index.html" class="logo"> SammyWrites </a>
+        <a href="index.html" class="logo">SammyWrites</a>
         <p class="tagline">A blog full of little digital footprints.</p>
       </div>
 
-        <ul class="nav-links">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="submit.html">Submit Blog</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="mailto:mariasamantha467@gmail.com">Contact</a></li>
         <li><a href="tel:+61481893582">Connect</a></li>
-        </ul>
+      </ul>
 
+      <!-- Settings Button -->
+      <button id="settingsBtn" class="settings-btn">⚙️</button>
+    </nav>
 
-            <!-- Search bar with live suggestions -->
-      <nav>
-        <form class="search-bar" role="search" onsubmit="return false;">
+    <!-- Search bar with live suggestions -->
+    <div class="search-bar-wrap">
+      <form class="search-bar" role="search" onsubmit="return false;">
         <input type="text" id="searchInput" placeholder="Search blogs..." aria-label="Search">
         <button type="button" id="searchBtn">🔍</button>
-        </form>
-        <ul id="suggestions"></ul>
-      </nav>
-        <div class="font-picker">
-    <label for="fontSelect">Choose font:</label>
-    <select id="fontSelect">
-      <option value="'Poppins', sans-serif" selected>Poppins</option>
-      <option value="'Playfair Display', serif">Playfair Display</option>
-      <option value="'Quicksand', sans-serif">Quicksand</option>
-      <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
-      <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
-    </select>
-  </div>
-
+      </form>
+      <ul id="suggestions"></ul>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -66,26 +50,80 @@ fontSelect.addEventListener("change", () => {
     <h2>Explore ✨</h2>
     <div class="circle-grid">
       <div class="circle-card" id="aboutCircle">
-        <h3><a href="#">About Me 💕</a></h3>
+        <h3><a href="about.html">About Me 💕</a></h3>
       </div>
       <div class="circle-card" id="featuredCircle">
-        <h3><a href="#">Featured Blogs 🍦</a></h3>
+        <h3><a href="featured.html">Featured Blogs 🍦</a></h3>
       </div>
       <div class="circle-card" id="playlistCircle">
-        <h3><a href="#">Playlists 🎶</a></h3>
+        <h3><a href="playlists.html">Playlists 🎶</a></h3>
       </div>
       <div class="circle-card" id="connectCircle">
-        <h3><a href="#">Connect 📬</a></h3>
+        <h3><a href="mailto:mariasamantha467@gmail.com">Connect 📬</a></h3>
       </div>
     </div>
   </section>
 
+  <!-- Settings Panel -->
+  <div id="settingsPanel" class="settings-panel">
+    <h3>⚙️ Settings</h3>
+
+    <label>
+      <input type="checkbox" id="darkModeToggle"> Enable Dark Mode
+    </label>
+
+    <label>
+      Font:
+      <select id="fontSelect">
+        <option value="'Poppins', sans-serif">Poppins (default)</option>
+        <option value="'Playfair Display', serif">Playfair Display</option>
+        <option value="'Quicksand', sans-serif">Quicksand</option>
+        <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
+        <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
+      </select>
+    </label>
+
+    <label>
+      <input type="checkbox" id="showTaglineToggle" checked> Show Tagline
+    </label>
+
+    <button id="closeSettings">Close</button>
+  </div>
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Sammy's Blog</p>
+    <p>&copy; 2025 SammyWrites</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script>
+    const settingsBtn = document.getElementById("settingsBtn");
+    const settingsPanel = document.getElementById("settingsPanel");
+    const closeSettings = document.getElementById("closeSettings");
 
+    // Open/close settings panel
+    settingsBtn.addEventListener("click", () => {
+      settingsPanel.style.display = "block";
+    });
+    closeSettings.addEventListener("click", () => {
+      settingsPanel.style.display = "none";
+    });
+
+    // Dark mode toggle
+    document.getElementById("darkModeToggle").addEventListener("change", (e) => {
+      document.body.classList.toggle("dark", e.target.checked);
+    });
+
+    // Font select
+    const fontSelect = document.getElementById("fontSelect");
+    fontSelect.addEventListener("change", () => {
+      document.body.style.fontFamily = fontSelect.value;
+    });
+
+    // Show/hide tagline
+    document.getElementById("showTaglineToggle").addEventListener("change", (e) => {
+      document.querySelector(".tagline").style.display = e.target.checked ? "block" : "none";
+    });
+  </script>
 </body>
 </html>
