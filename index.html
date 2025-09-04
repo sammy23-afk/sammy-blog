@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sammy's</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;700&family=Quicksand:wght@400;600&family=Bebas+Neue&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
+<script>
+const fontSelect = document.getElementById("fontSelect");
+
+fontSelect.addEventListener("change", () => {
+  document.body.style.fontFamily = fontSelect.value;
+});
+</script>
+
 <body>
   <!-- Header -->
   <header>
@@ -36,6 +46,15 @@
 
       <!-- Theme toggle -->
       <button id="themeToggle" aria-label="Toggle theme">🌗</button>
+      <label for="fontSelect">Choose font:</label>
+  <select id="fontSelect">
+  <option value="'Playfair Display', serif">Playfair Display</option>
+  <option value="'Poppins', sans-serif" selected>Poppins</option>
+  <option value="'Quicksand', sans-serif">Quicksand</option>
+  <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
+  <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
+</select>
+
     </nav>
   </header>
 
@@ -70,5 +89,6 @@
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>

@@ -442,3 +442,10 @@ body.books-page .page-content {
   color: #0077ff; /* subtle accent */
 }
 
+#fontSelect {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
